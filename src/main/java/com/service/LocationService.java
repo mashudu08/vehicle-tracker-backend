@@ -14,6 +14,10 @@ public class LocationService {
 	
 	@Autowired
 	private LocationRepository locationRepository;
+	
+	public Location create(Location location) {
+		return locationRepository.save(location);
+	}
 
 	// read all vehicle locations
 	public List<Location> read(){

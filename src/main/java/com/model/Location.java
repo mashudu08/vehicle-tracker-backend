@@ -1,6 +1,7 @@
 package com.model;
 
-import java.time.LocalDateTime;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -18,17 +19,18 @@ public class Location {
 	
 	@OneToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name="vehicleId", referencedColumnName = "vehicleId")
+	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 	private Vehicle vehicle;
 	private double latitude;
 	private double longitude;
-	private LocalDateTime timestamp;
+	private String timestamp;
 	
 	public Location() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Location(int locationId, Vehicle vehicle, double latitude, double longitude, LocalDateTime timestamp) {
+	public Location(int locationId, Vehicle vehicle, double latitude, double longitude, String timestamp) {
 		super();
 		this.locationId = locationId;
 		this.vehicle = vehicle;
@@ -69,11 +71,11 @@ public class Location {
 		this.longitude = longitude;
 	}
 
-	public LocalDateTime getTimestamp() {
+	public String getTimestamp() {
 		return timestamp;
 	}
 
-	public void setTimestamp(LocalDateTime timestamp) {
+	public void setTimestamp(String timestamp) {
 		this.timestamp = timestamp;
 	}
 
