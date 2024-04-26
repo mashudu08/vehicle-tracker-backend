@@ -13,6 +13,7 @@ import com.service.VehicleLocationService;
 
 @RestController
 @RequestMapping("/api/vehicle-location")
+@CrossOrigin(origins = "http://127.0.0.1:5500")
 public class VehicleLocationController {
 	
 	@Autowired

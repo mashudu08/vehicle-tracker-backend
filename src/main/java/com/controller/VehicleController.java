@@ -18,7 +18,6 @@ import com.service.VehicleService;
 
 @RestController
 @RequestMapping("/api/vehicle")
-//@CrossOrigin(origins = "http://127.0.0.1:5500", methods = {RequestMethod.GET, RequestMethod.POST})
 @CrossOrigin(origins = "http://127.0.0.1:5500")
 public class VehicleController {
 	@Autowired

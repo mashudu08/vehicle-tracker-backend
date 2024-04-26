@@ -41,6 +41,4 @@ public class LocationController {
 		{
 			return locationService.read(id);
 		}
-		
-		
 }
